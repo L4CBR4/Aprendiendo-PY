@@ -1,0 +1,59 @@
+# Manejo de errores — try / except
+#try/except  permite anticipar que algo puede salir mal, y decirle a Python:
+#  "si esto falla, no te detengas, haz esto otro en su lugar".
+
+try:
+    numero = int(input("Escribe un número: "))
+    print(f"El doble es: {numero * 2}")
+except:
+    print("Eso no era un número válido")
+
+
+#para  que el programa no se rompa asi el usuario inserte valores erroneos muchas veces,
+ #es necesario la implementacion de yn bucle asi:
+
+
+while True:
+    try:
+        numero = int(input("Escribe un número: "))
+        print(f"El doble es: {numero * 2}")
+        break
+    except:
+        print("Eso no era un número válido, intenta de nuevo")
+
+#excepciones específicas
+#Aquí distingues dos tipos distintos de error, y cada uno tiene su propio mensaje específico:
+
+#ValueError → pasa cuando int() no puede convertir el texto (como "hola")
+# ZeroDivisionError → pasa cuando divides entre 0
+
+
+try:
+    numero = int(input("Escribe un número: "))
+    resultado = 10 / numero
+    print(resultado)
+except ValueError:
+    print("Eso no es un número válido")
+except ZeroDivisionError:
+    print("No puedes dividir entre cero")   #igual solo permite un error
+
+
+
+#varias veces
+ 
+while True:
+    try:
+        numero = int(input("Escribe un número: "))
+        resultado = 10 / numero
+        print(resultado)
+        break
+    except ValueError:
+        print("Eso no es un número válido")
+    except ZeroDivisionError:
+        print("No puedes dividir entre cero")
+    except Exception:
+        print("Ocurrió un error inesperado")
+
+    
+
+    

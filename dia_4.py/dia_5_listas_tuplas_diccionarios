@@ -1,0 +1,101 @@
+#Listas — guardar varios datos en una sola variable
+#¿Qué problema resuelven?
+#Hasta ahora, si querías guardar los nombres de 5 amigos, necesitarías 5 variables sueltas:
+# amigo1, amigo2, amigo3... Una lista te permite guardar todos esos datos juntos, 
+# en una sola variable, en un orden específico.
+
+frutas = ["manzana", "banana", "fresa"]
+print(frutas)
+
+herramientas = ["taladro", "pulidora", "caladora", "lijadora", "pistola para pintar"]
+print(herramientas)
+
+
+repuestos = ["caucho", "remaches 1/4", "tornillos 3/8","cinta reflectiva"]
+print(repuestos)
+
+#Se escribe entre corchetes [ ]
+#Los elementos van separados por comas
+#Pueden ser texto, números, lo que sea — incluso mezclados
+
+#Acceder a un elemento — por índice
+#Cada elemento tiene una posición, llamada índice, que empieza en 0 (no en 1 — esto es igual que con range()
+frutas = ["manzana", "banana", "fresa"]
+print(frutas[0])   # manzana
+print(frutas[1])   # banana
+print(frutas[2])   # fresa
+
+#Modificar un elemento
+frutas[1] = "kiwi"
+print(frutas)   # ["manzana", "kiwi", "fresa"]
+
+#Agregar y quitar elementos
+
+frutas.append("uva")       # agrega al final
+print(frutas)
+
+frutas.remove("manzana")   # quita ese elemento específico
+print(frutas)
+
+#Recorrer una lista con for
+for fruta in frutas:
+    print(fruta)
+
+
+#     TUPLAS Una tupla es una lista que se congela apenas la creas 
+# — mismo comportamiento para leer datos, pero prohibido modificarla después.
+
+#La única diferencia visible es el símbolo: [ ] para listas, ( ) para tuplas.
+
+frutas_lista = ["manzana", "banana", "fresa"]      # lista
+frutas_tupla = ("manzana", "banana", "fresa")      # tupla
+
+print(frutas_lista[0])   # manzana
+print(frutas_tupla[0])   # manzana
+
+#frutas_tupla.append("uva")       # agrega al final (error no deja)
+#print(frutas)
+
+
+#Diccionarios — datos guardados por "nombre", no por posición
+# Un diccionario te deja acceder a los datos
+#  por un nombre descriptivo (llamado "clave"), no por número de posición.
+
+persona = {
+    "nombre": "Camila",
+    "edad": 25,
+    "ciudad": "Bogotá"
+}
+# Se escribe entre llaves { }
+# Cada dato es un par clave: valor
+#"nombre", "edad", "ciudad" → son las claves (los "nombres" con los que accedes)
+#"Camila", 25, "Bogotá" → son los valores (los datos reales)
+
+# Acceder a un valor — por clave, no por índice
+print(persona["nombre"])   # Camila
+print(persona["edad"])     # 25
+
+# Modificar o agregar un valor
+persona["edad"] = 26              # modifica un valor existente
+persona["profesion"] = "Diseñadora"   # agrega una clave nueva
+print(persona)
+
+# Recorrer un diccionario con for
+
+for clave in persona:
+    print(clave, persona[clave])
+
+#...
+
+persona = {
+    "nombre": "Camila",
+    "edad": 25,
+    "ciudad": "Bogotá"
+}
+
+print(persona["nombre"])
+persona["edad"] = 26
+persona["profesion"] = "Diseñadora"
+
+for clave in persona:
+    print(clave, persona[clave])
