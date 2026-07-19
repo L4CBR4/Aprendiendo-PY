@@ -1,0 +1,37 @@
+# ejercicio para comprender if
+efit = 100
+lord = 110
+
+if lord < efit:
+    print("es totalmente verdadero")
+else:
+    print("es totalmente falso")
+
+# ejercicio para comprender elif
+nota = float(input("introduzca por favor su nota: "))
+if nota < 5:
+    print("su nota es I de insuficiente")
+else:
+    print("felicitaciones su nota es E de excelente")
+
+# rangos de las notas
+nota = float(input("introduzca por favor su nota: "))
+if 0 <= nota < 5:
+    print("su nota es I")
+elif 5 <= nota < 7:
+    print("usted paso rapando")
+elif 7 <= nota < 8:
+    print("usted es bueno/a")
+elif 8 <= nota < 9:
+    print("usted es muy bueno/a")
+elif nota <= 10:
+    print("usted es el mejor de la clase")
+else:
+    print("no es una nota valida, solo se aceptan notas entre 0 y 10")
+
+# funciones
+def multiplicar(a, n):
+    return a * n
+
+respuesta = multiplicar(15, 3)
+print(respuesta)
