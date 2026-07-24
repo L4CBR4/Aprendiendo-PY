@@ -1,6 +1,10 @@
+#ESTE ES EL PROGRMA DEFINITIVO PARA REGISTRAR ACTIVIDADES DIARIAS DE PROCESOS EN UNA FLOTA DE TRANSPORTE
+
 # ============================================================
 # FUNCIONES DE VALIDACION
 # ============================================================
+
+
 
 def pedir_id_tecnico():
     while True:

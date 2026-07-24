@@ -1,3 +1,7 @@
+# ESTE ES UN EJERCICIO QUE SE REALIZA CON EL FIN DE ATERRIZAR LA IDEA DEL PROGRAMA QUE VA A REGISTRAR LA FLOTA DE TRANSPORTE
+
+#NO ES EL PROGRAMA QUE VAMOS A UTILIZAR  
+
 mantenimientos = [
     {
         "id_tecnico": "T045",
@@ -162,3 +166,4 @@ nuevas_novedades = generar_novedades(mantenimientos)
 print("\n--- Todas las novedades (incluyendo la nueva) ---")
 for n in nuevas_novedades:
     print(f"Placa: {n['placa']} | Componente: {n['componente']} | Estado: {n['estado']}")
+
