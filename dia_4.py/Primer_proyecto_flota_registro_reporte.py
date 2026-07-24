@@ -100,3 +100,65 @@ for n in lista_novedades:
     print(f"Placa: {n['placa']} | Componente: {n['componente']} | Estado: {n['estado']}")
     print(f"Recomendacion: {n['recomendacion']}")
     print("---")
+
+def pedir_trabajos_realizados():
+    trabajos = []
+    while True:
+        componente = input("Componente trabajado (o escribe 'fin' para terminar): ")
+        if componente.lower() == "fin":
+            break
+        repuesto = input("Repuesto utilizado: ")
+        diagnostico = input("Diagnostico / que se hizo: ")
+        trabajo = {"componente": componente, "repuesto": repuesto, "diagnostico": diagnostico}
+        trabajos.append(trabajo)
+        print("Trabajo agregado correctamente.\n")
+    return trabajos
+
+def pedir_pendientes():
+    pendientes = []
+    while True:
+        componente = input("Componente con novedad pendiente (o escribe 'fin' para terminar): ")
+        if componente.lower() == "fin":
+            break
+        recomendacion = input("Recomendacion / que se debe revisar despues: ")
+        pendiente = {"componente": componente, "recomendacion": recomendacion}
+        pendientes.append(pendiente)
+        print("Pendiente agregado correctamente.\n")
+    return pendientes
+
+def registrar_mantenimiento():
+    id_tecnico = input("Ingrese su ID de tecnico: ")
+    placa = input("Placa del vehiculo: ")
+    fecha = input("Fecha (AAAA-MM-DD): ")
+    tipo = input("Tipo de mantenimiento (mecanico/electrico/carroceria): ")
+    motivo_principal = input("Motivo principal de la intervencion: ")
+    km = int(input("Kilometraje actual del vehiculo: "))
+
+    print("\n--- Registro de trabajos realizados ---")
+    trabajos = pedir_trabajos_realizados()
+
+    print("\n--- Registro de pendientes/novedades ---")
+    pendientes = pedir_pendientes()
+
+    nuevo_registro = {
+        "id_tecnico": id_tecnico,
+        "placa": placa,
+        "fecha": fecha,
+        "tipo": tipo,
+        "motivo_principal": motivo_principal,
+        "trabajos_realizados": trabajos,
+        "pendientes": pendientes,
+        "km": km,
+        "costo_total": 0
+    }
+    return nuevo_registro
+nuevo = registrar_mantenimiento()
+mantenimientos.append(nuevo)
+
+print("\n--- Reporte actualizado con el nuevo registro ---")
+mostrar_reporte(mantenimientos)
+
+nuevas_novedades = generar_novedades(mantenimientos)
+print("\n--- Todas las novedades (incluyendo la nueva) ---")
+for n in nuevas_novedades:
+    print(f"Placa: {n['placa']} | Componente: {n['componente']} | Estado: {n['estado']}")
