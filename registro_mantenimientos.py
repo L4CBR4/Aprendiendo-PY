@@ -1,3 +1,5 @@
+
+# ESTE ES EL PROGRAMA DEFINITIVO QUE REALIZA EL REGISTRO DE ACTIVIDADES DE UN TECNICO PARA UNA FLOTA DE TRANSPORTE.
 # ============================================================
 # FUNCIONES DE VALIDACION
 # ============================================================
